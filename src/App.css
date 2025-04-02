@@ -1,0 +1,46 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.table-container {
+  text-align: left;
+  outline: solid;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: beige;
+}
+
+th {
+  padding: 0 20px;
+}
+
+td {
+  padding: 4px 20px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.stats {
+  outline: solid;
+  padding: 10px 30px;
+  border-radius: 10px;
+}
+
+.stats-text {
+  font-size: 24px;
+}
