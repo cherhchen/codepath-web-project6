@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router';
 import './App.css'
 
 function App() {
@@ -135,7 +136,11 @@ function App() {
             {searchInput.length > 0 || selectedType != "" ? 
               filteredResults.map((brewery) => (
                 <tr key={brewery.id}>
-                <td>{brewery.name}</td>
+                <td>
+                  <Link to={`/detail/${brewery.id}`}>
+                    {brewery.name}
+                  </Link>
+                </td>
                 <td>{brewery.brewery_type}</td>
                 <td>{brewery.city}</td>
                 <td>{brewery.state}</td>
@@ -144,7 +149,11 @@ function App() {
             )) : (
               list.map((brewery) => (
                 <tr key={brewery.id}>
-                  <td>{brewery.name}</td>
+                  <td>
+                    <Link to={`/detail/${brewery.id}`}>
+                      {brewery.name}
+                    </Link>
+                  </td>
                   <td>{brewery.brewery_type}</td>
                   <td>{brewery.city}</td>
                   <td>{brewery.state}</td>

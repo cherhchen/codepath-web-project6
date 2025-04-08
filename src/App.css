@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
   text-align: center;
 }
 
@@ -11,6 +11,7 @@
   border-radius: 10px;
   padding: 20px;
   background-color: beige;
+  margin-bottom: 4rem;
 }
 
 th {
@@ -43,4 +44,33 @@ td {
 
 .stats-text {
   font-size: 24px;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  min-width: 300px;
+  min-height: 100vh;
+  margin-right: 3rem;
+  background-color: lightblue;
+  font-size: 2rem;
+  text-align: left;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 3rem;
+}
+
+.detail-container {
+  text-align: left;
+}
+
+.sub-details {
+  font-size: 1.5rem;
 }
