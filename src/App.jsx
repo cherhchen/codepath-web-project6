@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router';
 import './App.css'
+import BreweryTypeChart from './components/BreweryTypeChart';
+import CountryChart from './components/CountryChart';
 
 function App() {
   const [list, setList] = useState(null);
@@ -13,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const getBreweries = async () => {
-      const url = "https://api.openbrewerydb.org/v1/breweries/random?size=20";
+      const url = "https://api.openbrewerydb.org/v1/breweries/random?size=30";
       const response = await fetch(url);
       const json = await response.json();
       setList(json);
@@ -100,6 +102,13 @@ function App() {
             <h2>Foreign Breweries 🌐</h2>
             <p className="stats-text">{numForeignBreweries}</p>
           </div>
+        </div>
+      }
+      {
+        list &&
+        <div>
+          <BreweryTypeChart list={list}/>
+          <CountryChart numUS={numUSBreweries} numForeign={numForeignBreweries}/>
         </div>
       }
       <h2>List of Breweries 🍺</h2>

@@ -59,7 +59,7 @@ td {
   text-align: left;
 }
 
-ul {
+.sidebar ul {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -73,4 +73,13 @@ ul {
 
 .sub-details {
   font-size: 1.5rem;
+}
+
+.piechart-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.piechart {
+  margin-left: 30%;
 }
