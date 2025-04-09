@@ -6,14 +6,25 @@ const BreweryDetail = () => {
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
+      const controller = new AbortController();
       const getBreweryDetail = async() => {
-        const url = "https://api.openbrewerydb.org/v1/breweries/" + params.id
-        const response = await fetch(url);
-        const json = await response.json();
-        console.log(json);
-        setDetails(json);
+        try {
+          const url = "https://api.openbrewerydb.org/v1/breweries/" + params.id
+          const response = await fetch(url, { signal: controller.signal });
+          const json = await response.json();
+          console.log(json);
+          setDetails(json);
+        }
+        catch (error) {
+          if (error.name === "AbortError") {
+            // It's ok, don't do anything
+          } else {
+            console.error(error);
+          }
+        }
     }
     getBreweryDetail().catch(console.error);
+    return () => controller.abort()
   }, [params.id]);
 
   return (
